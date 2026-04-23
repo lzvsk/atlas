@@ -6,15 +6,34 @@ Claude Code plugin that keeps `docs/` as a 1-to-1 mirror of your codebase. Two s
 
 ## Install
 
-After the repo is published to GitHub:
+### Prerequisite — one-time git setup
+
+Claude Code's `/plugin install` has a [known bug](https://github.com/anthropics/claude-code/issues/29722) that tries to clone plugins via SSH without falling back to HTTPS. If you don't have SSH keys set up for GitHub (most users don't by default), installation fails with `Permission denied (publickey)`.
+
+Fix by telling git to rewrite GitHub SSH URLs to HTTPS — a harmless global git setting:
+
+```bash
+git config --global --add url."https://github.com/".insteadOf "git@github.com:"
+git config --global --add url."https://github.com/".insteadOf "ssh://git@github.com/"
+```
+
+Run this once per machine. It does nothing for people who already have GitHub SSH keys configured; for people who don't, it makes every git-over-SSH call use HTTPS instead. No credentials needed — HTTPS works with the default GitHub credential helper.
+
+### Install atlas
+
+In any Claude Code session:
 
 ```
 /plugin marketplace add lzvsk/atlas
-/plugin install atlas
+/plugin install atlas@atlas
 /reload-plugins
 ```
 
-Or include it from an existing marketplace by adding to `marketplace.json`:
+Verify with `/plugin` — you should see `atlas` as `enabled`.
+
+### Alternative — include via another marketplace
+
+If you maintain a collection marketplace, add this entry to its `marketplace.json`:
 
 ```json
 {
@@ -26,6 +45,8 @@ Or include it from an existing marketplace by adding to `marketplace.json`:
   }
 }
 ```
+
+The same git-rewrite prerequisite applies.
 
 ## Usage
 
