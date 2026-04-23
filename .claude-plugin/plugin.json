@@ -1,0 +1,16 @@
+{
+  "name": "atlas",
+  "version": "0.1.0",
+  "description": "Harness engineering for Claude Code: keeps docs/ as a 1-to-1 mirror of your code.",
+  "author": {
+    "name": "Oleg Lozovsky",
+    "email": "lzvoleg87@gmail.com"
+  },
+  "license": "WTFPL",
+  "keywords": [
+    "docs",
+    "atlas",
+    "discipline",
+    "agent-legibility"
+  ]
+}
