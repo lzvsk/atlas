@@ -11,11 +11,7 @@
       "name": "atlas",
       "description": "Harness engineering for Claude Code: keeps docs/ as a 1-to-1 mirror of your code.",
       "category": "productivity",
-      "source": {
-        "source": "github",
-        "repo": "lzvsk/atlas",
-        "ref": "main"
-      }
+      "source": "./plugins/atlas"
     }
   ]
 }
