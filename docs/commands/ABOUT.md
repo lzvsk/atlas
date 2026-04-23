@@ -1,6 +1,6 @@
 ---
 mirrors:
-  - commands/**
+  - plugins/atlas/commands/**
 ---
 
 # commands/

@@ -1,6 +1,6 @@
 ---
 mirrors:
-  - agents/**
+  - plugins/atlas/agents/**
 ---
 
 # agents/

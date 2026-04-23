@@ -1,6 +1,6 @@
 ---
 mirrors:
-  - .claude-plugin/plugin.json
+  - plugins/atlas/.claude-plugin/plugin.json
 ---
 
 # Architecture

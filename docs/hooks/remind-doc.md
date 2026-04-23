@@ -1,6 +1,6 @@
 ---
 mirrors:
-  - hooks/remind-doc.sh
+  - plugins/atlas/hooks/remind-doc.sh
 ---
 
 # hooks/remind-doc.sh

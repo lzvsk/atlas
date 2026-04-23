@@ -1,6 +1,6 @@
 ---
 mirrors:
-  - commands/init.md
+  - plugins/atlas/commands/init.md
 ---
 
 # commands/init.md

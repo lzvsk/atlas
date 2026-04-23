@@ -1,6 +1,6 @@
 ---
 mirrors:
-  - commands/sync.md
+  - plugins/atlas/commands/sync.md
 ---
 
 # commands/sync.md

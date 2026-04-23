@@ -1,6 +1,6 @@
 ---
 mirrors:
-  - hooks/**
+  - plugins/atlas/hooks/**
 ---
 
 # hooks/

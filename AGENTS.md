@@ -2,15 +2,19 @@
 
 Claude Code plugin: `docs/` mirrors the code 1-to-1. Every code change updates the matching doc in the same turn. This repo is both the plugin **and** a dogfood of its methodology.
 
+## Repo layout
+
+This is a marketplace repo. The actual plugin lives in `plugins/atlas/` (ultrapack-style: marketplace at root, plugin as a subfolder referenced by relative path).
+
 ## Navigation
 
 - **Plugin architecture:** `docs/ARCHITECTURE.md` — stack, components, flows, boundaries
 - **Docs index:** `docs/ABOUT.md`
-- **Code mirrors** (one folder per code folder):
-  - `docs/commands/` ← `commands/`
-  - `docs/skills/` ← `skills/`
-  - `docs/agents/` ← `agents/`
-  - `docs/hooks/` ← `hooks/`
+- **Code mirrors** (one folder in `docs/` per folder inside `plugins/atlas/`):
+  - `docs/commands/` ← `plugins/atlas/commands/`
+  - `docs/skills/` ← `plugins/atlas/skills/`
+  - `docs/agents/` ← `plugins/atlas/agents/`
+  - `docs/hooks/` ← `plugins/atlas/hooks/`
 
 ## Code ↔ docs
 
@@ -18,11 +22,12 @@ Source of truth for the mapping is the `mirrors:`-frontmatter in each doc file. 
 
 | Code | Matching doc |
 |---|---|
-| `commands/<file>.md` | `docs/commands/<file>.md` |
-| `skills/<name>/<file>.md` | `docs/skills/<name>/<file>.md` |
-| `agents/<file>.md` | `docs/agents/<file>.md` |
-| `hooks/<file>` | `docs/hooks/<basename>.md` (extension stripped) |
-| `.claude-plugin/plugin.json` | `docs/ARCHITECTURE.md` |
+| `plugins/atlas/commands/<file>.md` | `docs/commands/<file>.md` |
+| `plugins/atlas/skills/<name>/<file>.md` | `docs/skills/<name>/<file>.md` |
+| `plugins/atlas/agents/<file>.md` | `docs/agents/<file>.md` |
+| `plugins/atlas/hooks/<file>` | `docs/hooks/<basename>.md` (extension stripped) |
+| `plugins/atlas/.claude-plugin/plugin.json` | `docs/ARCHITECTURE.md` |
+| `.claude-plugin/marketplace.json` | not documented (marketplace manifest) |
 | `README.md`, `AGENTS.md`, `CLAUDE.md`, `INSTRUCTIONS.md`, `license.txt`, `.gitignore` | not documented (housekeeping) |
 
 ## Rules
@@ -42,7 +47,7 @@ Two, no complex flags:
 
 ## When atlas fires
 
-1. After any code edit — the `hooks/remind-doc.sh` hook prints which doc to update.
+1. After any code edit — the `plugins/atlas/hooks/remind-doc.sh` hook prints which doc to update.
 2. In any conversation about docs/structure/"where does X go" — the `atlas` skill activates.
 3. On explicit `/atlas:init` or `/atlas:sync`.
 4. Before declaring a task done — rule 5 (closing ritual).

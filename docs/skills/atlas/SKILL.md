@@ -1,6 +1,6 @@
 ---
 mirrors:
-  - skills/atlas/SKILL.md
+  - plugins/atlas/skills/atlas/SKILL.md
 ---
 
 # skills/atlas/SKILL.md

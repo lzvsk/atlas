@@ -1,6 +1,6 @@
 ---
 mirrors:
-  - agents/atlas-auditor.md
+  - plugins/atlas/agents/atlas-auditor.md
 ---
 
 # agents/atlas-auditor.md

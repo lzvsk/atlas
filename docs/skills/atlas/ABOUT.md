@@ -1,6 +1,6 @@
 ---
 mirrors:
-  - skills/atlas/**
+  - plugins/atlas/skills/atlas/**
 ---
 
 # skills/atlas/
