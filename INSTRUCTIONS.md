@@ -4,12 +4,13 @@ Claude Code plugin: `docs/` mirrors the codebase 1-to-1. Two slash commands, one
 
 ## Install
 
-After GitHub push:
 ```
-/plugin marketplace add lzvsk/atlas
-/plugin install atlas
+/plugin marketplace add lzvsk/atlas-pack
+/plugin install atlas@atlas-pack
 /reload-plugins
 ```
+
+Marketplace — `atlas-pack`, plugin — `atlas`. Разные имена (исторически это обход бага Claude Code, когда match-имена ломали install; сейчас это просто чистая структура в духе ultrapack).
 
 ## Commands
 

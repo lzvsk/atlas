@@ -96,7 +96,7 @@ Agent:  print report
 
 1. **Methodology lives in the user's AGENTS.md, not the skill.** The plugin does two things: `init` writes methodology into the repo; `sync` audits against it. The skill (~60 lines) is just the minimum rules + pointer to AGENTS.md.
 2. **`mirrors:`-frontmatter is the mapping source of truth for parsers** (auditor, hook). The Code↔docs table in AGENTS.md is for humans. On conflict, frontmatter wins.
-3. **Repo root = plugin root.** `.claude-plugin/plugin.json` at the top level, no nested `plugins/<name>/`. Consumable from any marketplace via `{"source": "github", "repo": "lzvsk/atlas"}`.
+3. **Marketplace-with-inline-plugin layout** (ultrapack-style). Repo root holds the marketplace (`.claude-plugin/marketplace.json`) and human-facing docs (README, AGENTS.md, INSTRUCTIONS.md, `docs/`). The plugin itself lives at `plugins/atlas/` with its own `.claude-plugin/plugin.json` + `commands/` / `skills/` / `agents/` / `hooks/`. Installable via `/plugin marketplace add lzvsk/atlas-pack` + `/plugin install atlas@atlas-pack`.
 4. **Plugin silent in non-atlas repos.** Skill doesn't activate, hook is silent, commands report "not an atlas repo".
 
 ## Dependencies
