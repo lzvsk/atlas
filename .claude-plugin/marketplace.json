@@ -1,16 +1,12 @@
 {
-  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "atlas",
-  "description": "Harness engineering for Claude Code: keeps docs/ as a 1-to-1 mirror of your code.",
   "owner": {
-    "name": "Oleg Lozovsky",
-    "email": "lzvoleg87@gmail.com"
+    "name": "Oleg Lozovsky"
   },
   "plugins": [
     {
       "name": "atlas",
       "description": "Harness engineering for Claude Code: keeps docs/ as a 1-to-1 mirror of your code.",
-      "category": "productivity",
       "source": "./plugins/atlas"
     }
   ]
