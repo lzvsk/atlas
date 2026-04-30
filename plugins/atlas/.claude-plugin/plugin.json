@@ -1,6 +1,6 @@
 {
   "name": "atlas",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Harness engineering for Claude Code: keeps docs/ as a 1-to-1 mirror of your code.",
   "author": {
     "name": "Oleg Lozovsky",
